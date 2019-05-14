@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>APP</title>
+    <link rel="stylesheet" type="text/css" href="css/basic.css"/>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/modernizr.2.5.3.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+<div>
+<div class="list" style="background:url(./image/目录.jpg)">
+<div style="position:absolute;font-size:2em;color: rgba(255,255,255,1);text-align: center;height:50px;width:100%;top: 11%;">目录</div>
+<div style="position:absolute;font-size:1em;color: rgb(15, 15, 15);text-align: center;height:50px;width:100%;top: 18%;">Catalogue</div>
+<span id="p3">天露山</span>
+<span id="p4">国恩寺</span>
+<span id="p5">罗定学宫</span>
+<span id="p6">蟠龙洞</span>
+<span id="p7">云海</span>
+<span id="p8">荔枝</span>
+<span id="p9">寻味郁南</span>
+<span id="p10">相遇新兴</span>
+<span id="p11">米粉与肠粉</span>
+</div>
+<div class="flipbook-viewport" style="display:none;">
+    <div class="previousPage"></div>
+    <div class="nextPage"></div>
+    <div id="return"></div>
+    <img class="btnImg" src="./image/btn.png" style="display: none"/>
+    <div class="container">
+        <div class="flipbook">
+        </div>
+    </div>
+</div>
+</div>
+<script>
+    //上一页
+    $(".previousPage").bind("touchend", function () {
+        var pageCount = $(".flipbook").turn("pages");//总页数
+        var currentPage = $(".flipbook").turn("page");//当前页
+        if (currentPage >= 2) {
+            $(".flipbook").turn('page', currentPage - 1);
+        } else {
+        }
+    });
+    // 下一页
+    $(".nextPage").bind("touchend", function () {
+        var pageCount = $(".flipbook").turn("pages");//总页数
+        var currentPage = $(".flipbook").turn("page");//当前页
+        if (currentPage <= pageCount) {
+            $(".flipbook").turn('page', currentPage + 1);
+        } else {
+        }
+    });
+    //到目录页
+    document.getElementById("return").addEventListener("click", function(){
+        document.getElementsByClassName("list")[0].className = "list show";
+    })
+    document.getElementById("p3").addEventListener("click", function(){
+        $(".flipbook").turn('page', 3);
+        document.getElementsByClassName("list")[0].className = "list hidden";
+    })
+    document.getElementById("p4").addEventListener("click", function(){
+        $(".flipbook").turn('page', 4);
+        document.getElementsByClassName("list")[0].className = "list hidden";
+    })
+    document.getElementById("p5").addEventListener("click", function(){
+        $(".flipbook").turn('page', 5);
+        document.getElementsByClassName("list")[0].className = "list hidden";
+    })
+    document.getElementById("p6").addEventListener("click", function(){
+        $(".flipbook").turn('page',6);
+        document.getElementsByClassName("list")[0].className = "list hidden";
+    })
+    document.getElementById("p7").addEventListener("click", function(){
+        $(".flipbook").turn('page', 7);
+        document.getElementsByClassName("list")[0].className = "list hidden";
+    })
+    document.getElementById("p8").addEventListener("click", function(){
+        $(".flipbook").turn('page', 8);
+        document.getElementsByClassName("list")[0].className = "list hidden";
+    })
+    document.getElementById("p9").addEventListener("click", function(){
+        $(".flipbook").turn('page', 9);
+        document.getElementsByClassName("list")[0].className = "list hidden";
+    })
+    document.getElementById("p10").addEventListener("click", function(){
+        $(".flipbook").turn('page', 10);
+        document.getElementsByClassName("list")[0].className = "list hidden";
+    })
+    document.getElementById("p11").addEventListener("click", function(){
+        $(".flipbook").turn('page', 11);
+        document.getElementsByClassName("list")[0].className = "list hidden";
+    })
+</script>
+</body>
+</html>

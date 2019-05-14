@@ -1,0 +1,2 @@
+用谷歌浏览器打开，先按F12，然后点toggle device toolbar（ctrl+shift+M）
+将页面拉至手机屏幕大小，F5刷新页面
